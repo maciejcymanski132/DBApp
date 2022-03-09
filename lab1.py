@@ -79,6 +79,7 @@ def zad11(matrix):
         for i in range(0,len(n),-1):
             print(n[i])
 
+
 def zad12(macierz):
     i = 0
     sum = 0
@@ -99,12 +100,11 @@ def zad14():
 
 
 def zad15(lista1,lista2):
-    return lista1+lista2
+    return lista1[0:-1]+lista2
 
 
 def zad16(macierz):
-    return max([wiersz for wiersz in macierz])
-
+    return (max(macierz,key=lambda x: sum(x)),min(macierz,key=lambda x: sum(x)))
 
 def zad17(macierz):
     return macierz.transpose()
