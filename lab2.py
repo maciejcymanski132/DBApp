@@ -25,10 +25,26 @@ def related_values(d,v):
 def invert(d):
     return {v:related_values(d,v) for v in set(d.values())}
 
-#zad6
 
+#zad6
+alphabet = ["a","ą","b","c","ć","d","e","ę","f","g","h","i","j",
+            "k","l","ł","m","n","ń","o","ó","p","r","s","ś","t",
+            "u","w","y","z","ź","ż"]
+def zad6(text,key):
+    return "".join([alphabet[(alphabet.index(letter.lower()) + key) % len(alphabet)].upper()
+                    if letter.isalpha() and letter.isupper()
+                    else alphabet[(alphabet.index(letter.lower()) + key) % len(alphabet)].lower()
+                    if letter.islower() else letter
+                    for letter in text])
 
 #zad7
+def zad7(text,key):
+    translator = {letter: alphabet[(alphabet.index(letter.lower()) - key) % len(alphabet)].upper()
+                    if letter.isalpha() and letter.isupper()
+                    else alphabet[(alphabet.index(letter.lower()) - key) % len(alphabet)].lower()
+                    if letter.islower() else letter
+                    for letter in text}
+    return "".join([translator[letter] for letter in text])
 
 
 #zad8
